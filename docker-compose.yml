@@ -1,0 +1,14 @@
+services:
+  app:
+    image: wenju1991/trojan:latest
+    container_name: trojan_server
+    restart: unless-stopped
+    environment:
+      TERM: xterm
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certs/fullchain.pem:/usr/src/trojan-cert/fullchain.cer:ro
+      - ./certs/privkey.pem:/usr/src/trojan-cert/private.key:ro
+      - ./config/server.conf:/usr/src/trojan/server.conf:ro

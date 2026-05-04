@@ -1,0 +1,10 @@
+FROM local/trojan-installed:latest
+
+COPY scripts/entrypoint.sh /opt/scripts/entrypoint.sh
+
+RUN chmod +x /opt/scripts/entrypoint.sh
+
+EXPOSE 80
+EXPOSE 443
+
+ENTRYPOINT ["/opt/scripts/entrypoint.sh"]
