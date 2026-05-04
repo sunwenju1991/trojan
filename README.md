@@ -7,3 +7,17 @@
 
 ```bash
 docker compose up -d
+
+1. 克隆项目到 /opt/trojan
+```bash
+cd /opt || exit 1
+
+rm -rf /opt/trojan
+
+git clone https://github.com/sunwenju1991/trojan.git /opt/trojan
+
+cd /opt/trojan || exit 1
+
+2. 启动服务
+```bash
+docker compose up -d
